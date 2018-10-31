@@ -294,7 +294,7 @@ pub type AlpmResult<T> = Result<T, Error>;
 #[cfg(test)]
 mod test {
     use super::*;
-    extern crate alpm_sys;
+    extern crate alpm_sys_fork;
 
     #[test]
     fn from_u32() {

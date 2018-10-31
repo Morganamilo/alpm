@@ -1,5 +1,5 @@
 [package]
-name = "alpm-sys"
+name = "alpm-sys-fork"
 version = "0.1.2"
 repository = "https://github.com/derekdreery/alpm-sys"
 documentation = "https://docs.rs/alpm-sys/"

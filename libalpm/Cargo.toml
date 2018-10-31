@@ -1,18 +1,19 @@
 [package]
-name = "libalpm"
+name = "libalpm-fork"
 version = "0.1.3"
-authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
+authors = ["James Zhu", "Richard Dodd <richard.o.dodd@gmail.com>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/derekdreery/alpm"
-homepage = "https://github.com/derekdreery/alpm/tree/master/libalpm"
+repository = "https://github.com/vn971/alpm"
+homepage = "https://github.com/vn971/alpm/tree/master/libalpm"
 documentation = "https://derekdreery.github.io/alpm/libalpm/index.html"
 description = """
 An aspirationally safe wrapper around libalpm (the Arch Linux Package Manager).
+This fork compiles on stable rust.
 """
 
 [dependencies]
-alpm-sys = { git = "https://github.com/jameslzhu/alpm", branch = "master" }
+alpm-sys-fork = { path = "../alpm-sys", version = "0.1.2" }
 printf = "0.1"
 libc = "0.2"
 url = "1.4"

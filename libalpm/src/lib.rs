@@ -14,7 +14,7 @@
 //! let alpm = Alpm::new("/", "/var/lib/pacman"); // default locations on arch linux
 //! ```
 
-extern crate alpm_sys;
+extern crate alpm_sys_fork;
 extern crate chrono;
 #[macro_use]
 extern crate lazy_static;
