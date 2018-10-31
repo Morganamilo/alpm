@@ -1,5 +1,5 @@
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 use libc::{self, c_char, c_ulong};
 use chrono::{NaiveDateTime, NaiveDate};
 
@@ -607,7 +607,7 @@ pub enum PackageFrom {
 
 impl Into<u32> for PackageFrom {
     fn into(self) -> u32 {
-        use alpm_sys::alpm_pkgfrom_t::*;
+        use alpm_sys_fork::alpm_pkgfrom_t::*;
         match self {
             PackageFrom::File => ALPM_PKG_FROM_FILE as u32,
             PackageFrom::LocalDb => ALPM_PKG_FROM_LOCALDB as u32,
@@ -640,7 +640,7 @@ pub enum Reason {
 
 impl Into<u32> for Reason {
     fn into(self) -> u32 {
-        use alpm_sys::alpm_pkgreason_t::*;
+        use alpm_sys_fork::alpm_pkgreason_t::*;
         match self {
             Reason::Explicit => ALPM_PKG_REASON_EXPLICIT as u32,
             Reason::Depend => ALPM_PKG_REASON_DEPEND as u32,
@@ -650,7 +650,7 @@ impl Into<u32> for Reason {
 
 impl From<u32> for Reason {
     fn from(f: u32) -> Self {
-        use alpm_sys::alpm_pkgreason_t::*;
+        use alpm_sys_fork::alpm_pkgreason_t::*;
         if f == ALPM_PKG_REASON_EXPLICIT as u32 {
             Reason::Explicit
         } else if f == ALPM_PKG_REASON_DEPEND as u32 {
@@ -663,7 +663,7 @@ impl From<u32> for Reason {
 
 impl From<Reason> for alpm_pkgreason_t {
     fn from(from: Reason) -> Self {
-        use alpm_sys::alpm_pkgreason_t::*;
+        use alpm_sys_fork::alpm_pkgreason_t::*;
         match from {
             Reason::Explicit => ALPM_PKG_REASON_EXPLICIT,
             Reason::Depend => ALPM_PKG_REASON_DEPEND,
@@ -742,7 +742,7 @@ impl Validation {
 
 impl From<Validation> for u32 {
     fn from(from: Validation) -> Self {
-        use alpm_sys::alpm_pkgvalidation_t::*;
+        use alpm_sys_fork::alpm_pkgvalidation_t::*;
         match from {
             Validation::Unknown => ALPM_PKG_VALIDATION_UNKNOWN as u32,
             Validation::None => ALPM_PKG_VALIDATION_NONE as u32,

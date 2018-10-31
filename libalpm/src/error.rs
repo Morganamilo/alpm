@@ -204,7 +204,7 @@ impl fmt::Display for Error {
 
 impl From<u32> for Error {
     fn from(from: u32) -> Error {
-        use alpm_sys::alpm_errno_t::*;
+        use alpm_sys_fork::alpm_errno_t::*;
         match from {
             x if x == ALPM_ERR_MEMORY as u32 => Error::Memory,
             x if x == ALPM_ERR_SYSTEM as u32 => Error::System,
@@ -298,7 +298,7 @@ mod test {
 
     #[test]
     fn from_u32() {
-        let err = alpm_sys::alpm_errno_t::ALPM_ERR_MEMORY as u32;
+        let err = alpm_sys_fork::alpm_errno_t::ALPM_ERR_MEMORY as u32;
         assert_eq!(Error::Memory, err.into());
     }
 }

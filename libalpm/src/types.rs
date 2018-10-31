@@ -1,6 +1,6 @@
 //! A place for types related to alpm, rather than e.g. a package
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 
 /// This version of libalpm's capabilities
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

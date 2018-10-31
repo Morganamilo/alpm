@@ -4,7 +4,7 @@ use std::default::Default;
 use std::fmt;
 use std::cmp::{self, Ordering};
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 
 /// The highest log level marked true
 #[derive(Debug, PartialEq, Eq, Copy, Clone)]
@@ -116,7 +116,7 @@ impl LogLevels {
 
 impl Into<u32> for LogLevels {
     fn into(self) -> u32 {
-        use alpm_sys::alpm_loglevel_t::*;
+        use alpm_sys_fork::alpm_loglevel_t::*;
         let mut acc = 0;
         if self.error {
             acc |= ALPM_LOG_ERROR as u32;

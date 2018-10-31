@@ -36,7 +36,7 @@ impl From<SigLevel> for u32 {
 
 impl<'a> From<&'a SigLevel> for u32 {
     fn from(from: &'a SigLevel) -> u32 {
-        use alpm_sys::alpm_siglevel_t::*;
+        use alpm_sys_fork::alpm_siglevel_t::*;
         let mut acc = 0;
         if from.package {
             acc |= ALPM_SIG_PACKAGE as u32;

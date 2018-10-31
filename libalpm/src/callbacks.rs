@@ -2,7 +2,7 @@ use std::panic;
 use std::ffi::CStr;
 
 use printf::printf;
-use alpm_sys::*;
+use alpm_sys_fork::*;
 use libc::{c_int, c_char, c_void, off_t};
 
 use {LOG_CB, DOWNLOAD_CB, DLTOTAL_CB, FETCH_CB, EVENT_CB, DownloadResult};

@@ -4,7 +4,7 @@ use libc;
 use std::mem;
 use std::ptr;
 use std::ffi::{CStr, CString};
-use alpm_sys::*;
+use alpm_sys_fork::*;
 
 /// A wrapper around a `libc::utsname` struct, holding information on the current computer and os.
 pub struct UtsName(libc::utsname);

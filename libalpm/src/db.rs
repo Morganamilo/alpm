@@ -2,7 +2,7 @@ use std::ffi::{CStr, CString};
 use std::str::Utf8Error;
 use std::mem;
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 use pgp::SigLevel;
 use libc::{c_char};
 
@@ -270,7 +270,7 @@ impl Default for Usage {
 
 impl From<Usage> for u32 {
     fn from(from: Usage) -> Self {
-        use alpm_sys::alpm_db_usage_t::*;
+        use alpm_sys_fork::alpm_db_usage_t::*;
         let mut acc = 0;
         if from.sync {
             acc |= ALPM_DB_USAGE_SYNC as u32;
@@ -290,7 +290,7 @@ impl From<Usage> for u32 {
 
 impl From<u32> for Usage {
     fn from(from: u32) -> Self {
-        use alpm_sys::alpm_db_usage_t::*;
+        use alpm_sys_fork::alpm_db_usage_t::*;
         Usage {
             sync: from & ALPM_DB_USAGE_SYNC as u32 != 0,
             search: from & ALPM_DB_USAGE_SEARCH as u32 != 0,

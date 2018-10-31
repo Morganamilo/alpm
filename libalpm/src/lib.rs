@@ -41,7 +41,7 @@ use std::sync::Mutex;
 use std::ptr;
 use std::marker::PhantomData;
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 use libc::{c_char, c_void};
 
 pub use options::{Config, RepoConfig};
@@ -619,7 +619,7 @@ impl Alpm {
             let raw_list = alpm_get_syncdbs(self.handle);
             //println!("{:?}", raw_list);
             //println!("error: {:?}", self.error().unwrap().description());
-            util::alpm_list_to_vec(raw_list, |ptr| Db::new(ptr as *mut alpm_sys::alpm_db_t, self))
+            util::alpm_list_to_vec(raw_list, |ptr| Db::new(ptr as *mut alpm_sys_fork::alpm_db_t, self))
         }
     }
 

@@ -5,7 +5,7 @@ use std::ptr;
 use std::mem;
 use std::marker::PhantomData;
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 use super::{Alpm, Package, PackageRef, Error, AlpmResult, util};
 use libc;
 

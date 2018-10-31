@@ -1,6 +1,6 @@
 //! Utility types/fn for `alpm_event_t`
 
-use alpm_sys::*;
+use alpm_sys_fork::*;
 
 use package::PackageOperation;
 
